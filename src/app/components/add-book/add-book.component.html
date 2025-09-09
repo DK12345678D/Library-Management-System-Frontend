@@ -1,0 +1,32 @@
+<p>add-book works!</p>
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4 class="mb-3">Add Book</h4>
+
+        <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+        <div *ngIf="success" class="alert alert-success">{{ success }}</div>
+
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input class="form-control" [(ngModel)]="title" name="title" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Author</label>
+            <input class="form-control" [(ngModel)]="author" name="author" required />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">ISBN</label>
+            <input class="form-control" [(ngModel)]="isbn" name="isbn" />
+          </div>
+
+          <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
